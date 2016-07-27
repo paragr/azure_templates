@@ -109,25 +109,5 @@
         "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_backend_name'))]"
       ]
     }
-
-      "type": "Microsoft.Network/dnszones/a",
-      "name": "[concat(parameters('newZoneName'), concat('/', parameters('newRecordName')))]",
-      "apiVersion": "2015-05-04-preview",
-      "location": "global",
-      "properties": {
-        "TTL": 3600,
-        "ARecords": [
-          {
-            "ipv4Address": "10.0.1.5"
-          },
-          {
-            "ipv4Address": "10.0.1.7"
-          }
-        ]
-      },
-      "dependsOn": [
-        "[concat('Microsoft.Network/dnszones/', parameters('newZoneName'))]"
-      ]
-    },
   ]
 }
