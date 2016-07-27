@@ -110,7 +110,7 @@
           {
             "name": "ipconfig1",
             "properties": {
-              "privateIPAddress": "10.0.1.8",
+              "privateIPAddress": "10.0.2.8",
               "privateIPAllocationMethod": "Static",
               "subnet": {
                 "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet0_name')), '/subnets/backend')]"
