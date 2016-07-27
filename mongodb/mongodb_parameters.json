@@ -3,12 +3,6 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
 
-    "newZoneName": {
-      "value": "azurednsexample.com"
-    },
-    "newRecordName": {
-      "value": "emee"
-    },
 
     "virtualMachines_vega_adminPassword": {
       "value": "Pass123!"
@@ -16,7 +10,6 @@
     "virtualMachines_vega_adminUser": {
       "value": "edtuser"
     },
-
 
     "networkInterfaces_mongodbNic0_name": {
       "value": "mongodbNic0"
@@ -26,13 +19,12 @@
       "value": "backend"
     },
 
-
     "virtualNetworks_vnet0_name": {
       "value": "vnet0"
     },
 
-    "storageAccounts_vega01safe01_name": {
-      "value": "vega01safe01"
-    },
+   "storageAccounts_vega01sabk01_name": {
+      "value": "vega01sabk01"
+    }
   }
 }
