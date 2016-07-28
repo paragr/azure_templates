@@ -21,6 +21,11 @@
     "storageAccounts_vega01sabk01_name": {
       "defaultValue": "vega01sabk01",
       "type": "String"
+    },
+	
+	"virtualMachines_mongodb_name": {
+      "defaultValue": "mongodb",
+      "type": "String"
     }
 
   },
