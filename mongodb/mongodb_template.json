@@ -2,10 +2,6 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    
-	"virtualMachines_vega_adminPassword": {
-      "value": "Pass123!"
-    },
 	
     "virtualMachines_vega_adminUser": {
       "value": "edtuser"
@@ -69,7 +65,7 @@
             "disablePasswordAuthentication": false
           },
           "secrets": [ ],
-          "adminPassword": "[parameters('virtualMachines_vega_adminPassword')]"
+          "adminPassword": "Pass123!"
         },
         "networkProfile": {
           "networkInterfaces": [
