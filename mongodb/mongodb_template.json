@@ -81,7 +81,22 @@
         "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_mongodbNic0_name'))]"
       ]
     },
-    	
+    
+	{
+		  "comments": "Generalized from resource: '/subscriptions/7843a771-8a2e-4a2c-8978-b73dbce5e52a/resourceGroups/devendratest002/providers/Microsoft.Storage/storageAccounts/vega01sabk01'.",
+		  "type": "Microsoft.Storage/storageAccounts",
+		  "name": "[parameters('storageAccounts_vega01sabk01_name')]",
+		  "apiVersion": "2015-06-15",
+		  "location": "southeastasia",
+		  "tags": {
+			"environment": "vega"
+		  },
+		  "properties": {
+			"accountType": "Standard_LRS"
+		  },
+		  "dependsOn": [ ]
+    },
+	
     {
       "comments": "Generalized from resource: '/subscriptions/1fca8117-41ee-4c16-8318-5236c7cdd6e2/resourceGroups/devendratest002/providers/Microsoft.Network/networkInterfaces/mongodb'.",
       "type": "Microsoft.Network/networkInterfaces",
