@@ -3,10 +3,6 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
 
-    "virtualMachines_vega_adminUser": {
-      "value": "edtuser"
-    },
-
     "networkInterfaces_mongodbNic0_name": {
       "value": "mongodbNic0"
     },

@@ -3,10 +3,6 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
 	
-    "virtualMachines_vega_adminUser": {
-      "value": "edtuser"
-    },
-	
     "networkInterfaces_mongodbNic0_name": {
       "defaultValue": "mongodbNic0",
       "type": "String"
@@ -60,7 +56,7 @@
         },
         "osProfile": {
           "computerName": "[parameters('virtualMachines_mongodb_name')]",
-          "adminUsername": "[parameters('virtualMachines_vega_adminUser')]",
+          "adminUsername": "edtuser",
           "linuxConfiguration": {
             "disablePasswordAuthentication": false
           },
