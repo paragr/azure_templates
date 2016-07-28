@@ -33,6 +33,85 @@
   "resources": [
 	
 	{
+      "comments": "Generalized from resource: '/subscriptions/7843a771-8a2e-4a2c-8978-b73dbce5e52a/resourceGroups/devendratest002/providers/Microsoft.Network/networkSecurityGroups/backend'.",
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "name": "[parameters('networkSecurityGroups_backend_name')]",
+      "apiVersion": "2015-06-15",
+      "location": "southeastasia",
+      "tags": { },
+      "properties": {
+        "securityRules": [
+          {
+            "name": "be_denyfrominternet",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "Internet",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 100,
+              "direction": "Inbound"
+            }
+          }
+        ]
+      },
+      "dependsOn": [ ]
+    },
+
+    {
+      "comments": "Generalized from resource: '/subscriptions/7843a771-8a2e-4a2c-8978-b73dbce5e52a/resourceGroups/devendratest002/providers/Microsoft.Network/publicIPAddresses/bastion0PublicIp1'.",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[parameters('publicIPAddresses_mongodb0PublicIp_name')]",
+      "apiVersion": "2015-06-15",
+      "location": "southeastasia",
+      "tags": { },
+      "properties": {
+        "publicIPAllocationMethod": "Dynamic",
+        "idleTimeoutInMinutes": 4,
+        "dnsSettings": {
+          "domainNameLabel": "vega01mongodb"
+        }
+      },
+      "dependsOn": [ ]
+    },
+
+
+    {
+      "comments": "Generalized from resource: '/subscriptions/7843a771-8a2e-4a2c-8978-b73dbce5e52a/resourceGroups/devendratest002/providers/Microsoft.Network/virtualNetworks/vnet0'.",
+      "type": "Microsoft.Network/virtualNetworks",
+      "name": "[parameters('virtualNetworks_vnet0_name')]",
+      "apiVersion": "2015-06-15",
+      "location": "southeastasia",
+      "tags": { },
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.0.0.0/16"
+          ]
+        },
+        "dhcpOptions": {
+          "dnsServers": [ ]
+        },
+        "subnets": [
+          {
+            "name": "backend",
+            "properties": {
+              "addressPrefix": "10.0.2.0/24",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_backend_name'))]"
+              }
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_backend_name'))]"
+      ]
+    },
+
+	
+	{
 		"comments": "Generalized from resource: '/subscriptions/1fca8117-41ee-4c16-8318-5236c7cdd6e2/resourceGroups/devendratest002/providers/Microsoft.Storage/storageAccounts/vega01sabk01'.",
 		"type": "Microsoft.Storage/storageAccounts",
 		"name": "[parameters('storageAccounts_vega01sabk01_name')]",
