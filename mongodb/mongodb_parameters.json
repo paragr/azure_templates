@@ -17,6 +17,10 @@
 
    "storageAccounts_vega01sabk01_name": {
       "value": "vega01sabk01"
+    },
+	
+	"publicIPAddresses_mongodb0PublicIp_name": {
+      "value": "mongodb0PublicIp"
     }
   }
 }

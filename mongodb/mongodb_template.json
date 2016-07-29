@@ -13,6 +13,11 @@
       "type": "String"
     },
 
+	"publicIPAddresses_mongodb0PublicIp_name": {
+      "defaultValue": "mongodb0PublicIp",
+      "type": "String"
+    },
+	
     "virtualNetworks_vnet0_name": {
       "defaultValue": "vnet0",
       "type": "String"
@@ -59,6 +64,23 @@
       "dependsOn": [ ]
     },
 
+	 {
+      "comments": "Generalized from resource: '/subscriptions/1fca8117-41ee-4c16-8318-5236c7cdd6e2/resourceGroups/devendratest002/providers/Microsoft.Network/publicIPAddresses/bastion0PublicIp1'.",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[parameters('publicIPAddresses_mongodb0PublicIp_name')]",
+      "apiVersion": "2015-06-15",
+      "location": "southeastasia",
+      "tags": { },
+      "properties": {
+        "publicIPAllocationMethod": "Dynamic",
+        "idleTimeoutInMinutes": 4,
+        "dnsSettings": {
+          "domainNameLabel": "vega01mongodb"
+        }
+      },
+      "dependsOn": [ ]
+    },
+	
     {
       "comments": "Generalized from resource: '/subscriptions/1fca8117-41ee-4c16-8318-5236c7cdd6e2/resourceGroups/devendratest002/providers/Microsoft.Network/virtualNetworks/vnet0'.",
       "type": "Microsoft.Network/virtualNetworks",
@@ -169,8 +191,10 @@
           {
             "name": "ipconfig1",
             "properties": {
-              "privateIPAddress": "10.0.2.8",
-              "privateIPAllocationMethod": "Static",
+              "privateIPAllocationMethod": "Dynamic",
+			  "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddresses_mongodb0PublicIp_name'))]"
+              },
               "subnet": {
                 "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet0_name')), '/subnets/backend')]"
               },
