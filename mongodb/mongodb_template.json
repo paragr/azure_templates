@@ -55,10 +55,22 @@
               "sourceAddressPrefix": "Internet",
               "destinationAddressPrefix": "*",
               "access": "Deny",
+              "priority": 200,
+              "direction": "Inbound"
+            }
+          },
+		  {
+            "name": "bs_ssh",
+            "properties": {
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22",
+              "sourceAddressPrefix": "Internet",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
               "priority": 100,
               "direction": "Inbound"
             }
-          }
         ]
       },
       "dependsOn": [ ]
