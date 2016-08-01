@@ -60,7 +60,7 @@
             }
           },
 		  {
-            "name": "bs_ssh",
+             "name": "bs_ssh",
             "properties": {
               "protocol": "Tcp",
               "sourcePortRange": "*",
@@ -71,7 +71,7 @@
               "priority": 100,
               "direction": "Inbound"
             }
-		 }
+          }
         ]
       },
       "dependsOn": [ ]
